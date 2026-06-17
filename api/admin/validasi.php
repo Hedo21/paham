@@ -11,21 +11,21 @@ session_start();
 
     <title>Akses Ditolak - PAHAM</title>
 
-    <link href="../assets/img/favicon.png" rel="icon">
-    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../../assets/img/favicon.png" rel="icon">
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../../assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +35,7 @@ session_start();
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
             <a href="index.html" class="logo d-flex align-items-center me-auto">
-                <img src="../assets/img/logo.png" alt="">
+                <img src="../../assets/img/logo.png" alt="">
                 <h1 class="sitename">PAHAM</h1>
             </a>
 
@@ -75,7 +75,7 @@ session_start();
                             <i class="bi bi-box-arrow-in-right"></i>
                             Login Administrator
                         </a>
-                        <a href="index.html" class="btn btn-outline-primary">
+                        <a href="../../index.html" class="btn btn-outline-primary">
                             <i class="bi bi-house"></i>
                             Kembali ke Beranda
                         </a>
@@ -91,8 +91,8 @@ session_start();
         <div class="container footer-top">
             <div class="row gy-4 justify-content-center align-items-center text-center text-lg-start">
                 <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="index.html" class="d-flex align-items-center">
-                        <img src="../assets/img/logo.png" style="height:50px; margin-right:10px;">
+                    <a href="../../index.html" class="d-flex align-items-center">
+                        <img src="../../assets/img/logo.png" style="height:50px; margin-right:10px;">
                         <span class="sitename">
                             Kementerian Hak Asasi Manusia Republik Indonesia
                         </span>
@@ -141,11 +141,11 @@ session_start();
         <i class="bi bi-arrow-up-short"></i>
     </a>
 
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/aos/aos.js"></script>
-    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
 </body>
 

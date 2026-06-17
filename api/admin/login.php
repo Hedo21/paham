@@ -5,8 +5,8 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 if (
-    $username === 'admin' &&
-    $password === '123456'
+    $username === 'Hedom' &&
+    $password === 'Hedom123'
 ) {
     session_regenerate_id(true);
     $_SESSION['admin'] = true;
