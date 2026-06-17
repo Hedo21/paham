@@ -1,16 +1,12 @@
 <?php
-include 'config.php';
+include_once 'config.php';
 
-// Hitung token yang sah
 $token_sah = buat_token('Hedom');
 
-// JIKA COOKIE SESUAI & VALID, langsung arahkan masuk ke admin.php (tidak jadi menampilkan 403)
 if (isset($_COOKIE['admin_session']) && $_COOKIE['admin_session'] === $token_sah) {
     header("Location: admin.php");
     exit;
 }
-
-// Jika cookie TIDAK cocok atau TIDAK ada, kode HTML 403 di bawah ini baru akan mengepul ke browser
 ?>
 
 <!doctype html>
@@ -67,9 +63,9 @@ if (isset($_COOKIE['admin_session']) && $_COOKIE['admin_session'] === $token_sah
         </div>
     </header>
 
-    <main class="main">
+    <main class="main" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
 
-        <section class="section" style="padding-top: 180px; padding-bottom: 120px;">
+        <section class="section w-100" style="padding-top: 100px; padding-bottom: 20px;">
             <div class="container">
                 <div class="text-center">
                     <h1 class="display-1 fw-bold text-primary">
