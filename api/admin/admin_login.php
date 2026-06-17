@@ -1,7 +1,8 @@
 <?php
-session_start();
-
-if (isset($_SESSION['admin'])) {
+include 'config.php';
+// Cek jika cookie sudah ada dan valid, langsung lempar ke admin.php
+$token_sah = buat_token('Hedom');
+if (isset($_COOKIE['admin_session']) && $_COOKIE['admin_session'] === $token_sah) {
     header("Location: admin.php");
     exit;
 }
@@ -13,7 +14,6 @@ if (isset($_SESSION['admin'])) {
 <head>
     <meta charset="utf-8">
     <title>Login Admin PAHAM</title>
-
     <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="../../assets/css/main.css" rel="stylesheet">

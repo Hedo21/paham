@@ -6,6 +6,10 @@
     },
     "routes": [
         {
+            "src": "/admin/config.php",
+            "status": 404
+        },
+        {
             "src": "/admin/(.*)",
             "dest": "/api/admin/$1"
         },
