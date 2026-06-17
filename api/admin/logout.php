@@ -1,7 +1,7 @@
 <?php
-session_start();
+// Menghapus cookie 'admin_session' dari browser
+setcookie("admin_session", "", time() - 3600, "/");
 
-session_destroy();
-
+// Lempar kembali ke halaman beranda utama
 header("Location: ../../index.html");
 exit;

@@ -1,5 +1,16 @@
 <?php
-session_start();
+include 'config.php';
+
+// Hitung token yang sah
+$token_sah = buat_token('Hedom');
+
+// JIKA COOKIE SESUAI & VALID, langsung arahkan masuk ke admin.php (tidak jadi menampilkan 403)
+if (isset($_COOKIE['admin_session']) && $_COOKIE['admin_session'] === $token_sah) {
+    header("Location: admin.php");
+    exit;
+}
+
+// Jika cookie TIDAK cocok atau TIDAK ada, kode HTML 403 di bawah ini baru akan mengepul ke browser
 ?>
 
 <!doctype html>

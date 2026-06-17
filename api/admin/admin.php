@@ -1,13 +1,12 @@
 <?php
 include 'config.php';
 
-// Validasi Token Cookie yang dikirim oleh browser
 $token_sah = buat_token('Hedom');
 
+// Jika tidak punya akses (cookie tidak ada atau salah), tampilkan halaman validasi.php (403)
 if (!isset($_COOKIE['admin_session']) || $_COOKIE['admin_session'] !== $token_sah) {
-    // Jika tidak punya akses, tendang ke halaman login
-    header("Location: admin_login.php");
-    exit;
+    include 'validasi.php';
+    exit; // Stop pemrosesan agar halaman admin asli di bawahnya tidak bocor
 }
 ?>
 
