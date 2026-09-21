@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewMap = {
         MODUL: 'modul_XXX',
         BAHAN_AJAR: 'bahanajar_XXX',
-        ARTIKEL: 'artikel_XXX'
+        ARTIKEL: 'artikel_XXX',
+        AKTUALISASI: 'aktualisasi_XXX'
     };
 
     jenisEl.addEventListener('change', () => {

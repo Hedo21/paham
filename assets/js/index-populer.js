@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             const modulTop = getTopByJenis('MODUL', 1);
             const bahanajarTop = getTopByJenis('BAHAN_AJAR', 1);
             const artikelTop = getTopByJenis('ARTIKEL', 1);
+            const aktualisasiTop = getTopByJenis('AKTUALISASI', 1);
 
-            const mixedTop = [...modulTop, ...bahanajarTop, ...artikelTop];
+            const mixedTop = [...modulTop, ...bahanajarTop, ...artikelTop, ...aktualisasiTop];
             renderList(mixedTop);
             return;
         }
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const previewImage = item.thumbnail || 'assets/img/portfolio/placeholder.jpg';
 
         return `
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
             <div class="portfolio-content h-100">
                 <a href="${detailUrl}" class="portfolio-thumb d-block">
                     <img
