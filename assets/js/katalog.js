@@ -198,24 +198,54 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
 
         let html = `
-            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                <a class="page-link" href="#" data-page="${currentPage - 1}">«</a>
-            </li>
-        `;
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage - 1}">«</a>
+        </li>
+    `;
 
-        for (let page = 1; page <= totalPages; page++) {
-            html += `
-                <li class="page-item ${page === currentPage ? 'active' : ''}">
-                    <a class="page-link" href="#" data-page="${page}">${page}</a>
-                </li>
-            `;
+        // Menyimpan halaman yang akan ditampilkan
+        const visiblePages = new Set();
+
+        // Selalu tampilkan halaman pertama dan terakhir
+        visiblePages.add(1);
+        visiblePages.add(totalPages);
+
+        // Tampilkan 2 halaman sebelum dan 2 halaman sesudah halaman aktif
+        for (let page = currentPage - 2; page <= currentPage + 2; page++) {
+            if (page >= 1 && page <= totalPages) {
+                visiblePages.add(page);
+            }
         }
 
-        html += `
-            <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-                <a class="page-link" href="#" data-page="${currentPage + 1}">»</a>
+        // Urutkan nomor halaman
+        const pages = [...visiblePages].sort((a, b) => a - b);
+
+        let previousPage = 0;
+
+        pages.forEach(page => {
+            // Jika ada halaman yang dilewati, tampilkan ...
+            if (previousPage && page - previousPage > 1) {
+                html += `
+                <li class="page-item disabled">
+                    <span class="page-link">…</span>
+                </li>
+            `;
+            }
+
+            html += `
+            <li class="page-item ${page === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#" data-page="${page}">${page}</a>
             </li>
         `;
+
+            previousPage = page;
+        });
+
+        html += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage + 1}">»</a>
+        </li>
+    `;
 
         els.pagination.innerHTML = html;
 
@@ -224,7 +254,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                 e.preventDefault();
 
                 const page = Number(this.dataset.page);
-                if (!page || page < 1 || page > totalPages || page === currentPage) return;
+
+                if (!page || page < 1 || page > totalPages || page === currentPage) {
+                    return;
+                }
 
                 currentPage = page;
                 renderPage();
